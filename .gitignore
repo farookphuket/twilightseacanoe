@@ -1,0 +1,13 @@
+
+
+
+
+# not include the config file
+/inc/env.php
+
+# dot old should not be backup
+
+*.old
+*.old*
+
+.env
