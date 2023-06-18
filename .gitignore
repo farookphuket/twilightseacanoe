@@ -5,6 +5,15 @@
 # not include the config file
 /inc/env.php
 
+# not incluse image
+/assets/img
+
+/assets/vendor
+
+/images
+
+/BACKUP.old
+
 # dot old should not be backup
 
 *.old
