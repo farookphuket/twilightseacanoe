@@ -3,7 +3,7 @@ ob_start();
 session_start();
 
 $page = "index"; ?>
-<?php include "inc/db.php"; ?>
+<?php include_once "inc/db.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,16 +16,17 @@ $page = "index"; ?>
   <!-- SEO meta copy to the head of html index file END -->
   <?php
 
-  require 'master/int.php';
+  require_once 'master/int.php';
   ?>
 
 
 </head>
 
 <body>
+
   <main>
     <!-- ======= Header ======= -->
-    <?php require 'master/header.php'; ?>
+    <?php require_once 'master/header.php'; ?>
 
     <!--
       <?php //require 'master/slide.php'; 
@@ -92,7 +93,7 @@ $page = "index"; ?>
 
         </div>
 
-        <?php require 'master/contact_form.php'; ?>
+        <?php require_once 'master/contact_form.php'; ?>
 
       </div>
     </section><!-- End Contact Section -->
@@ -104,8 +105,8 @@ $page = "index"; ?>
 
 
   <?php
-  require('master/footer.php');
-  require('master/script_extra.php');
+  require_once('master/footer.php');
+  require_once('master/script_extra.php');
   ?>
 
   <script src="assets/js/main.js"></script>

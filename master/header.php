@@ -10,7 +10,7 @@
 
          <nav id="navbar" class="navbar">
            <ul>
-             <li><a class="nav-link scrollto active" href="/index.php">Home</a></li>
+             <li><a class="nav-link scrollto " href="/index.php">Home</a></li>
              <li><a class="nav-link scrollto" href="/about.php">About Us</a></li>
              <!-- <li><a class="nav-link scrollto" href="tour.php">Tour</a> !-->
              <li class="dropdown"><a href="#"><span>Tour</span> <i class="bi bi-chevron-down"></i></a>

@@ -3,6 +3,8 @@ session_start();
 ob_start();
 
 
+
+
 $client_email = "";
 if (isset($_SESSION["client_email"])) :
   $client_email = $_SESSION["client_email"];
@@ -10,7 +12,7 @@ endif;
 
 $page = "index";
 
-require "inc/db.php";
+require_once "inc/db.php";
 
 ?>
 <!DOCTYPE html>
@@ -24,7 +26,7 @@ require "inc/db.php";
   <meta name="keywords" content="thank you,twilightseacanoe,twilight phuket,better than the original">
   <meta name="description" content="your booking has been issue please check your email">
   <!-- SEO meta copy to the head of html index file END -->
-  <?php require 'master/int.php'; ?>
+  <?php require_once 'master/int.php'; ?>
 
 
 </head>
@@ -32,12 +34,8 @@ require "inc/db.php";
 <body>
   <main style="height:100vh;">
     <!-- ======= Header ======= -->
-    <?php require 'master/header.php'; ?>
+    <?php require_once 'master/header.php'; ?>
     <!-- End Header -->
-
-
-
-
     <!-- ======= My Resume Section ======= -->
     <section id="cart" class="resume" style="margin-top:4em;">
       <div class="container">
@@ -81,8 +79,8 @@ require "inc/db.php";
 
   </main><!-- End #main -->
   <?php
-  require 'master/footer.php';
-  require('master/script_extra.php');
+  require_once 'master/footer.php';
+  require_once('master/script_extra.php');
   ?>
 
   <script src="assets/js/main.js"></script>

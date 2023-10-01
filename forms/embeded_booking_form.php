@@ -1,7 +1,10 @@
     <section id="booking" class="resume">
       <div class="container">
         <h3 class="resume-title1"> Booking</h3>
-
+<p style="margin:2em;font-size:1.8em;">
+        <b style="color:red;font-weight:bold;">please note</b>
+        &nbsp;&nbsp;we're now operate 4 days of week "Monday","Wednesday","Friday" and "Saturday"
+      </p>
         <?php
         $tour_id = 1;
         ?>

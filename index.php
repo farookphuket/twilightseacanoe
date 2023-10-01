@@ -13,8 +13,8 @@ $page = "index";
 
 
   <?php
-  require("./inc/default_meta_tag.php");
-  require 'master/int.php'; ?>
+  require_once("./inc/default_meta_tag.php");
+  require_once 'master/int.php'; ?>
 
 
 </head>
@@ -22,8 +22,8 @@ $page = "index";
 <body>
   <main>
     <!-- ======= Header ======= -->
-    <?php require 'master/header.php'; ?>
-    <?php require 'master/slide.php'; ?>
+    <?php require_once 'master/header.php'; ?>
+    <?php require_once 'master/slide.php'; ?>
     <!-- End Header -->
 
     <!-- ======= About Section ======= -->
@@ -32,9 +32,16 @@ $page = "index";
         <div class="section-header">
         </div>
         <div class="row gy-4">
+          <!--
           <div class="col-lg-7 position-relative about-img" style="background-image: url(assets/img/baa.png) ;" data-aos="fade-up" data-aos-delay="150">
           </div>
-          <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
+-->
+          <div class="col-lg-6">
+            <div class="video-container">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/tGH-hpo8PVc?si=Lq912QYyU_aqEb6-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="col-lg-6 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
             <div class="content ps-0 ps-lg-5">
               <h2>About <span>Us</span></h2>
               <p class="fst-italic">Twilight Seacanoe is a travel agency. We have a team of experts with knowledge of nature, beaches, food, travel to help you enjoy your trip with us.</p>
@@ -104,7 +111,7 @@ $page = "index";
       </div>
     </section><!-- End Hotels Section -->
 
-    <?php require './master/gallery_embeded.php'; ?>
+    <?php require_once './master/gallery_embeded.php'; ?>
 
     <section id="contact" class="section-bg">
       <div class="container" data-aos="fade-up">
@@ -151,7 +158,7 @@ $page = "index";
 
         </div>
 
-        <?php require 'master/contact_form.php'; ?>
+        <?php require_once 'master/contact_form.php'; ?>
 
       </div>
     </section><!-- End Contact Section -->
@@ -166,8 +173,9 @@ $page = "index";
   <script src="assets/js/main-old.js"></script>
 
   <?php
-  require 'master/footer.php';
-  require('master/script_extra.php');
+  //require './master/footer.php';
+  include_once(__DIR__ . "/master/footer.php");
+  require_once('master/script_extra.php');
   ?>
 
   <script src="assets/js/main.js"></script>

@@ -4,7 +4,7 @@ session_start();
 
 $page = "index"; ?>
 <?php
-include "../inc/db.php";
+include_once "../inc/db.php";
 /*
  * get the meta keyword,title,
  * */
@@ -33,7 +33,7 @@ endwhile;
 <head>
   <meta charset="utf-8">
 
-  <?php require '../master/int.php'; ?>
+  <?php require_once '../master/int.php'; ?>
   <title><?php echo $meta_title; ?></title>
   <meta name="description" content="<?php echo $meta_desc; ?>" />
 </head>
@@ -41,19 +41,19 @@ endwhile;
 <body>
   <main style="min-height:100vh;">
     <!-- ======= Header ======= -->
-    <?php require '../master/header.php'; ?>
+    <?php require_once '../master/header.php'; ?>
     <?php
     $tour_id = 0;
     if (isset($_GET['tour_id']) && $_GET['tour_id'] != 0) :
       $tour_id = $_GET['tour_id'];
-      require('./tour_detail_embeded.php');
+      require_once('./tour_detail_embeded.php');
     ?>
     <?php
     endif;
     ?>
 
     <?php
-    require("../forms/booking_form1.php");
+    require_once("../forms/booking_form1.php");
     ?>
 
     <section id="resume" class="resume">
@@ -71,8 +71,8 @@ endwhile;
 
 
   <?php
-  require('../master/footer.php');
-  require('../master/script_extra.php');
+  require_once('../master/footer.php');
+  require_once('../master/script_extra.php');
   ?>
 
   <script src="../assets/js/main.js"></script>

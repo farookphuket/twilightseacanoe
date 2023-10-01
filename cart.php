@@ -10,7 +10,11 @@ $_SESSION['bookingdate'] = $_POST['bookingdate'];
 
 $page = "index";
 
-require "inc/db.php";
+//require "inc/db.php";
+include_once(__DIR__ . "/inc/db.php");
+
+
+
 
 ?>
 <!DOCTYPE html>
@@ -19,15 +23,29 @@ require "inc/db.php";
 <head>
   <meta charset="utf-8">
 
-  <?php require 'master/int.php'; ?>
+  <?php
+  //require 'master/int.php'; 
+
+  include_once(__DIR__ . "/master/int.php");
+
+  ?>
 
 
+  <!-- SEO meta copy to the head of html index file START -->
+  <title>Great Job Bro! you select one of the best tour in Phuket</title>
+  <meta name="keywords" content="cart,twilightseacanoe,twilight phuket,better than the original">
+  <meta name="description" content="feel free to ask for more information">
+  <!-- SEO meta copy to the head of html index file END -->
 </head>
 
 <body>
   <main>
     <!-- ======= Header ======= -->
-    <?php require 'master/header.php'; ?>
+    <?php
+    //require 'master/header.php'; 
+    include_once(__DIR__ . "/master/header.php");
+
+    ?>
     <!-- End Header -->
     <!-- ======= My Resume Section ======= -->
     <section id="cart" class="resume" style="margin-top:6em;">
@@ -42,7 +60,7 @@ require "inc/db.php";
                 <thead>
 
                   <th class="w-auto">#</th>
-                  <th>Booking Date</th>
+                    <th>Departure Date </th>
                   <th>Tour Name</th>
                   <th>Adult</th>
                   <th>Child</th>
@@ -53,12 +71,13 @@ require "inc/db.php";
                   <?php
                   $database = "tour";
 
-                  $sql = "SELECT * FROM $database WHERE id = '" . $_SESSION["tour_id"][$i] . "' ";
+                  $sql = "SELECT * FROM $database WHERE id = '" . $_SESSION["tour_id"] . "' ";
                   $obj = mysqli_query($conn, $sql);
                   $row = mysqli_fetch_array($obj);
 
                   $sumadult = 0;
                   $sumchild = 0;
+                  $SumTotal = 0;
 
                   $sumadult = $_SESSION["adult"] * $row['adult_price'];
                   $sumchild = $_SESSION["child"] * $row['child_price'];
@@ -113,38 +132,63 @@ require "inc/db.php";
                   <div class="text-center">
                     <h3><b>Traveler Details</b></h3>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group" style="margin-top:1.5em;">
                     <label class="col-sm-2 control-label">Full Name </label>
                     <div class="col-sm-10">
                       <input type="text" name="fullname" class="form-control" placeholder="your name eg:John Doe" required />
                     </div>
                   </div>
-                  <div class="form-group">
+
+                  <div class="form-group" style="margin-top:1.5em;">
                     <label class="col-sm-2 control-label">Nationality </label>
                     <div class="col-sm-10">
                       <input type="text" name="nationality" class="form-control" placeholder="Where are you from?" required />
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group" style="margin-top:1.5em;">
                     <label class="col-sm-2 control-label">Phone Number </label>
                     <div class="col-sm-10">
                       <input type="number" name="phone" class="form-control" placeholder="number only!" required />
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group" style="margin-top:1.5em;">
                     <label class="col-sm-2 control-label">Email </label>
                     <div class="col-sm-10">
                       <input type="email" name="email" class="form-control" placeholder="your email eg:youremail@host.com" required />
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group" style="margin-top:1.5em;">
                     <label class="col-sm-2 control-label">Special Requires </label>
                     <div class="col-sm-10">
                       <textarea name="special_require" class="form-control" placeholder="something we should know about you please call us."></textarea>
                     </div>
                   </div>
-                  <br>
-                  <div class="form-group">
+
+                  <fieldset style="margin-top:2em;margin-bottom:2em;">
+                    <legend> Hotel and room</legend>
+
+                  <div class="row">
+                    <div class="col-md-6">
+
+                      <div class="form-group">
+                        <label class="control-label">Hotel Name </label>
+                        <div class="col-sm-10">
+                          <input type="text" name="hotel_name" id="hotel_name" class="form-control" placeholder="Enter Your Hotel Name"  />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+
+                      <div class="form-group">
+                        <label class="control-label">Room Number </label>
+                        <div class="col-sm-10">
+                          <input type="text" name="room_number" id="room_number" class="form-control" placeholder="Enter the room number"  />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </fieldset>
+                  <div class="form-group" style="margin-top:1.5em;">
                     <div class="text-end">
                       <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
                       <button class="btn btn-outline-success" type="submit">BOOK<br></button>
@@ -156,7 +200,8 @@ require "inc/db.php";
 
             endif;  ?>
 
-            <?php mysqli_close($conn); ?>
+            <?php //mysqli_close($conn); 
+            ?>
 
           </div>
         </div>
@@ -171,7 +216,7 @@ require "inc/db.php";
   require('master/script_extra.php');
   ?>
 
-  <script src="assets/js/main.js"></script>
+  <script src="/assets/js/main.js"></script>
 
 </body>
 
